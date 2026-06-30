@@ -1,0 +1,12 @@
+{
+  "name": "Instituto Everest de Sinaloa",
+  "short_name": "Instituto Everest",
+  "description": "Universidad en línea con 19 programas académicos en licenciatura, maestría y doctorado",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#112f55",
+  "theme_color": "#112f55",
+  "icons": [
+    { "src": "assets/svg/logo-shield.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

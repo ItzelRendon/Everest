@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /aulavirtual/
+
+Sitemap: https://educacioneverest.com/sitemap.xml

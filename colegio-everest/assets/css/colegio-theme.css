@@ -1,0 +1,493 @@
+/* ============================================
+   COLEGIO EVEREST — TEMA EDUCACIÓN BÁSICA
+   Sobrescribe design-system.css para paleta
+   cálida (dorado como primario)
+   ============================================ */
+
+:root {
+  /* Primario → dorado */
+  --col-primary:       #F5B800;
+  --col-primary-dark:  #C99800;
+  --col-primary-light: #FFD449;
+  --col-primary-50:    #FFF8E1;
+  --col-primary-25:    #FFFBF0;
+
+  /* Acento → azul Everest (rol secundario) */
+  --col-accent:        #112f55;
+  --col-accent-dark:   #06182E;
+  --col-accent-light:  #1E4A8A;
+
+  /* Warm neutrals */
+  --col-warm-bg:       #FFFCF2;
+  --col-warm-alt:      #FFF8E1;
+  --col-warm-border:   #FDEAA0;
+
+  /* Radios más generosos */
+  --col-radius:    1rem;
+  --col-radius-lg: 1.5rem;
+  --col-radius-xl: 2rem;
+
+  /* Sombras doradas */
+  --col-shadow-gold: 0 8px 24px -4px rgba(245,184,0,.30);
+  --col-shadow-warm: 0 8px 24px -4px rgba(245,184,0,.12);
+}
+
+/* ── Sobrescrituras globales ───────────────── */
+
+body { background-color: var(--col-warm-bg); }
+
+.section--alt {
+  background: var(--col-warm-alt) !important;
+}
+
+.section--warm {
+  background: var(--col-primary-25);
+}
+
+/* ── Header ────────────────────────────────── */
+
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid var(--col-primary);
+  box-shadow: 0 2px 12px rgba(245,184,0,.15);
+}
+
+.site-header.is-scrolled {
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Botones ────────────────────────────────── */
+
+/* btn--primary → dorado en colegio */
+.btn--primary {
+  --btn-bg:           var(--col-primary);
+  --btn-color:        var(--col-accent-dark);
+  --btn-border:       var(--col-primary);
+  --btn-hover-bg:     var(--col-primary-light);
+  --btn-hover-color:  var(--col-accent-dark);
+  --btn-hover-border: var(--col-primary-light);
+}
+.btn--primary:hover { box-shadow: var(--col-shadow-gold); }
+
+/* btn--accent → azul */
+.btn--accent {
+  --btn-bg:           var(--col-accent);
+  --btn-color:        #fff;
+  --btn-border:       var(--col-accent);
+  --btn-hover-bg:     var(--col-accent-light);
+  --btn-hover-color:  #fff;
+  --btn-hover-border: var(--col-accent-light);
+}
+
+/* btn--outline-gold → borde dorado */
+.btn--outline-gold {
+  --btn-bg:           transparent;
+  --btn-color:        var(--col-accent-dark);
+  --btn-border:       var(--col-primary);
+  --btn-hover-bg:     var(--col-primary);
+  --btn-hover-color:  var(--col-accent-dark);
+  --btn-hover-border: var(--col-primary);
+}
+
+/* ── Eyebrow (etiqueta de sección) ──────────── */
+
+.eyebrow {
+  color: var(--col-primary-dark) !important;
+}
+
+.eyebrow::before {
+  background: var(--col-primary) !important;
+}
+
+/* ── Cards ──────────────────────────────────── */
+
+.card {
+  border-radius: var(--col-radius-lg) !important;
+  border: 1.5px solid var(--col-warm-border);
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.card:hover {
+  box-shadow: var(--col-shadow-gold);
+  transform: translateY(-3px);
+}
+
+/* ── Badge colegio ───────────────────────────── */
+
+.badge--warm {
+  background: var(--col-primary);
+  color: var(--col-accent-dark);
+  font-weight: 700;
+  padding: .35rem .9rem;
+  border-radius: var(--col-radius-xl);
+  font-size: .8rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* ── Hero Wave ──────────────────────────────── */
+
+.hero-wave {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+/* ── Stats Banner ────────────────────────────── */
+
+.stats-banner {
+  background: var(--col-primary);
+  padding: 2.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--col-accent-dark);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--fs-sm);
+  color: var(--col-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(17,47,85,.2);
+  height: 100%;
+  align-self: stretch;
+}
+
+/* ── Nivel Cards ─────────────────────────────── */
+
+.nivel-card {
+  background: #fff;
+  border-radius: var(--col-radius-xl);
+  overflow: hidden;
+  border: 2px solid var(--col-warm-border);
+  transition: box-shadow .25s, transform .25s;
+}
+
+.nivel-card:hover { box-shadow: var(--col-shadow-gold); transform: translateY(-4px); }
+
+.nivel-card__header {
+  padding: 2.5rem 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nivel-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nivel-card__body { padding: 0 2rem 2rem; }
+
+.nivel-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.nivel-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: var(--fs-sm);
+  color: var(--everest-gray-700);
+}
+
+.nivel-card__features li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--col-primary);
+  flex-shrink: 0;
+  margin-top: .4em;
+}
+
+/* ── Extracurriculares ───────────────────────── */
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.25rem;
+}
+
+.extra-item {
+  background: #fff;
+  border-radius: var(--col-radius-lg);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1.5px solid var(--col-warm-border);
+  transition: background .2s, box-shadow .2s, transform .2s;
+  cursor: default;
+}
+
+.extra-item:hover {
+  background: var(--col-primary);
+  box-shadow: var(--col-shadow-gold);
+  transform: translateY(-2px);
+}
+
+.extra-item:hover .extra-icon { color: var(--col-accent-dark); }
+.extra-item:hover .extra-label { color: var(--col-accent-dark); }
+
+.extra-icon {
+  color: var(--col-accent);
+  margin-bottom: .6rem;
+  transition: color .2s;
+}
+
+.extra-label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--everest-gray-700);
+  transition: color .2s;
+}
+
+/* ── Galería ─────────────────────────────────── */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 220px);
+  gap: 1rem;
+  border-radius: var(--col-radius-xl);
+  overflow: hidden;
+}
+
+.gallery-item {
+  background: var(--col-warm-alt);
+  border-radius: var(--col-radius);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--everest-gray-500);
+  border: 1.5px dashed var(--col-warm-border);
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.gallery-item--big {
+  grid-row: span 2;
+}
+
+.gallery-item--wide {
+  grid-column: span 2;
+}
+
+.gallery-item svg { opacity: .4; }
+
+/* ── FAQ ─────────────────────────────────────── */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: var(--col-radius);
+  border: 1.5px solid var(--col-warm-border);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--col-accent-dark);
+  text-align: left;
+  transition: background .2s;
+}
+
+.faq-question:hover { background: var(--col-primary-25); }
+.faq-item.open .faq-question { background: var(--col-warm-alt); }
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--col-primary-dark);
+  transition: transform .25s ease;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+.faq-answer {
+  display: none;
+  padding: 0 1.5rem 1.25rem;
+  font-size: var(--fs-base);
+  color: var(--everest-gray-700);
+  line-height: 1.75;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* ── Sucursales ──────────────────────────────── */
+
+.sucursales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sucursal-card {
+  background: #fff;
+  border-radius: var(--col-radius-xl);
+  padding: 2rem;
+  border: 2px solid var(--col-warm-border);
+  transition: box-shadow .25s, transform .25s;
+}
+
+.sucursal-card:hover {
+  box-shadow: var(--col-shadow-gold);
+  transform: translateY(-3px);
+}
+
+.sucursal-badge {
+  display: inline-block;
+  background: var(--col-primary);
+  color: var(--col-accent-dark);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: var(--col-radius-xl);
+  margin-bottom: 1rem;
+}
+
+.sucursal-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 900;
+  color: var(--col-accent-dark);
+  margin-bottom: 1.25rem;
+}
+
+.sucursal-data {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.sucursal-data li {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: var(--fs-sm);
+  color: var(--everest-gray-700);
+  line-height: 1.5;
+}
+
+.sucursal-data li svg {
+  flex-shrink: 0;
+  color: var(--col-primary-dark);
+  margin-top: .1em;
+}
+
+.sucursal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+
+/* ── CTA Banner ─────────────────────────────── */
+
+.cta-banner {
+  background: linear-gradient(135deg, var(--col-accent-dark) 0%, var(--col-accent) 100%);
+  border-radius: var(--col-radius-xl);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(245,184,0,.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Footer override ─────────────────────────── */
+
+.site-footer {
+  background: linear-gradient(135deg, var(--col-accent-dark) 0%, var(--col-accent) 100%) !important;
+}
+
+.site-footer::before { display: none; }
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item--big, .gallery-item--wide {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  .gallery-item { height: 160px; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .extra-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item { height: 140px; }
+  .gallery-item--big, .gallery-item--wide { grid-column: auto; grid-row: auto; }
+}

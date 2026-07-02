@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#112f55"/>
+      <stop offset="100%" stop-color="#0A2240"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD449"/>
+      <stop offset="100%" stop-color="#F5B800"/>
+    </linearGradient>
+  </defs>
+  <path d="M100 10 L175 35 L175 100 C175 145 145 175 100 190 C55 175 25 145 25 100 L25 35 Z"
+        fill="url(#shieldGrad)" stroke="#F5B800" stroke-width="3"/>
+  <path d="M100 25 L160 45 L160 100 C160 135 135 160 100 172 C65 160 40 135 40 100 L40 45 Z"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5"/>
+  <text x="100" y="92" text-anchor="middle" font-family="serif" font-size="48" font-weight="bold" fill="url(#goldGrad)">E</text>
+  <text x="100" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" letter-spacing="2">EVEREST</text>
+  <text x="100" y="142" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="500" fill="#FFD449" letter-spacing="1.5">DE SINALOA</text>
+  <circle cx="100" cy="110" r="2" fill="#FFD449"/>
+  <path d="M70 155 L75 165 L80 155 M90 155 L95 165 L100 155 M110 155 L115 165 L120 155" stroke="#F5B800" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Everest de Sinaloa — Elige tu nivel educativo</title>
+  <meta name="description" content="Instituto Everest de Sinaloa. Educación básica (Colegio Everest) y superior en línea (Universidad Everest). Elige tu nivel educativo.">
+  <link rel="canonical" href="https://educacioneverest.com/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M100 10 L175 35 L175 100 C175 145 145 175 100 190 C55 175 25 145 25 100 L25 35 Z' fill='%23112f55' stroke='%23F5B800' stroke-width='3'/><text x='100' y='92' text-anchor='middle' font-family='serif' font-size='48' font-weight='bold' fill='%23F5B800'>E</text></svg>">
+  <meta name="theme-color" content="#112f55">
+ 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Instituto Everest de Sinaloa">
+  <meta property="og:description" content="Educación básica y superior en Mazatlán. Elige tu nivel.">
+  <meta property="og:url" content="https://educacioneverest.com/">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --blue-dark:  #06182E;
+      --blue:       #112f55;
+      --blue-mid:   #1A4080;
+      --gold:       #F5B800;
+      --gold-light: #FFD449;
+      --gold-dark:  #C99800;
+      --cream:      #FFFCF2;
+      --cream-alt:  #FFF3B0;
+      --white:      #ffffff;
+ 
+      --font-display: 'Red Hat Display', system-ui, sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+ 
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+ 
+    html, body {
+      height: 100%;
+      font-family: var(--font-body);
+      overflow: hidden;
+    }
+ 
+    @media (max-width: 768px) {
+      html, body { overflow: auto; }
+    }
+ 
+    /* ── Header ─────────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 64px;
+      pointer-events: none;
+    }
+ 
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      pointer-events: auto;
+      text-decoration: none;
+    }
+ 
+    .header-logo-text {
+      font-family: var(--font-display);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: .85;
+      line-height: 1.3;
+      text-shadow: 0 1px 6px rgba(0,0,0,.4);
+    }
+ 
+    /* ── Selector Layout ─────────────────────── */
+    .selector {
+      display: flex;
+      height: 100vh;
+      position: relative;
+    }
+ 
+    /* ── Panel base ──────────────────────────── */
+    .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: flex .55s var(--ease-expo);
+      padding: 80px 2rem 3rem;
+    }
+ 
+    .selector:has(.panel--colegio:hover) .panel--colegio { flex: 1.5; }
+    .selector:has(.panel--colegio:hover) .panel--universidad { flex: 0.7; }
+    .selector:has(.panel--universidad:hover) .panel--universidad { flex: 1.5; }
+    .selector:has(.panel--universidad:hover) .panel--colegio { flex: 0.7; }
+ 
+    /* ── Colegio panel ───────────────────────── */
+    .panel--colegio {
+      background: linear-gradient(145deg, #FFF8E1 0%, #FFF0A0 40%, #FFE066 100%);
+    }
+ 
+    /* Líneas decorativas fondo colegio */
+    .panel--colegio::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(245,184,0,.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(245,184,0,.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+ 
+    /* Círculos decorativos */
+    .panel--colegio::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 48px solid rgba(245,184,0,.12);
+      pointer-events: none;
+    }
+ 
+    /* ── Universidad panel ───────────────────── */
+    .panel--universidad {
+      background: linear-gradient(145deg, #06182E 0%, #112f55 50%, #1E4A8A 100%);
+    }
+ 
+    .panel--universidad::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 80% 80%, rgba(245,184,0,.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 20%, rgba(30,74,138,.6) 0%, transparent 40%);
+      pointer-events: none;
+    }
+ 
+    .panel--universidad::after {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 48px solid rgba(245,184,0,.06);
+      pointer-events: none;
+    }
+ 
+    /* ── Panel content ───────────────────────── */
+    .panel-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+      max-width: 400px;
+    }
+ 
+    .panel-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .5rem;
+      transition: transform .35s var(--ease-expo);
+    }
+ 
+    .panel:hover .panel-icon { transform: scale(1.1) translateY(-4px); }
+ 
+    .panel--colegio .panel-icon {
+      background: rgba(17,47,85,.1);
+      border: 2px solid rgba(17,47,85,.15);
+    }
+ 
+    .panel--universidad .panel-icon {
+      background: rgba(245,184,0,.12);
+      border: 2px solid rgba(245,184,0,.2);
+    }
+ 
+    .panel-badge {
+      font-family: var(--font-body);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 999px;
+    }
+ 
+    .panel--colegio .panel-badge {
+      background: rgba(17,47,85,.1);
+      color: var(--blue);
+    }
+ 
+    .panel--universidad .panel-badge {
+      background: rgba(245,184,0,.15);
+      color: var(--gold-light);
+    }
+ 
+    .panel-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      transition: transform .35s var(--ease-expo);
+    }
+ 
+    .panel:hover .panel-title { transform: translateY(-2px); }
+ 
+    .panel--colegio .panel-title { color: var(--blue-dark); }
+    .panel--universidad .panel-title { color: var(--white); }
+ 
+    .panel-sub {
+      font-size: var(--fs-sm, .875rem);
+      line-height: 1.6;
+      max-width: 280px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .3s ease .1s, transform .3s ease .1s;
+    }
+ 
+    .panel:hover .panel-sub {
+      opacity: 1;
+      transform: translateY(0);
+    }
+ 
+    .panel--colegio .panel-sub { color: var(--blue); }
+    .panel--universidad .panel-sub { color: rgba(255,255,255,.8); }
+ 
+    .panel-levels {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+ 
+    .panel-level {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: .25rem .65rem;
+      border-radius: 999px;
+    }
+ 
+    .panel--colegio .panel-level {
+      background: rgba(17,47,85,.08);
+      color: var(--blue);
+    }
+ 
+    .panel--universidad .panel-level {
+      background: rgba(245,184,0,.1);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(245,184,0,.2);
+    }
+ 
+    .panel-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .9rem;
+      padding: .75rem 1.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform .25s var(--ease-expo), box-shadow .25s ease;
+      margin-top: .5rem;
+    }
+ 
+    .panel-cta:hover { transform: translateY(-2px); }
+ 
+    .panel--colegio .panel-cta {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(17,47,85,.25);
+    }
+ 
+    .panel--colegio .panel-cta:hover {
+      box-shadow: 0 8px 28px rgba(17,47,85,.35);
+    }
+ 
+    .panel--universidad .panel-cta {
+      background: var(--gold);
+      color: var(--blue-dark);
+      box-shadow: 0 4px 20px rgba(245,184,0,.3);
+    }
+ 
+    .panel--universidad .panel-cta:hover {
+      background: var(--gold-light);
+      box-shadow: 0 8px 28px rgba(245,184,0,.45);
+    }
+ 
+    /* Flecha */
+    .panel-cta svg {
+      transition: transform .25s var(--ease-expo);
+    }
+    .panel-cta:hover svg { transform: translateX(3px); }
+ 
+    /* ── Divider central ─────────────────────── */
+    .divider {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      pointer-events: none;
+      user-select: none;
+      transition: left .55s var(--ease-expo);
+    }
+ 
+    .divider-shield {
+      width: 80px;
+      height: 80px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,.35)) drop-shadow(0 0 12px rgba(245,184,0,.3));
+      transition: filter .3s ease;
+    }
+ 
+    /*
+      Cuando se hace hover en colegio (flex 1.5 vs 0.7, total 2.2):
+      centro de colegio = 1.5/2.2 * 100% / 2 ≈ 34%
+    */
+    .selector:has(.panel--colegio:hover) .divider {
+      left: 66%;
+    }
+ 
+    /*
+      Cuando se hace hover en universidad:
+      colegio ocupa 0.7/2.2 ≈ 31.8%, universidad empieza ahí
+      centro de universidad = 31.8% + (1.5/2.2 * 100%)/2 ≈ 31.8% + 34.1% ≈ 66%
+    */
+    .selector:has(.panel--universidad:hover) .divider {
+      left: 34%;
+    }
+ 
+    .divider-line {
+      width: 1px;
+      height: 40vh;
+      background: linear-gradient(to bottom, transparent, rgba(245,184,0,.5), rgba(245,184,0,.5), transparent);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity .3s ease;
+    }
+ 
+    /* La línea desaparece al hacer hover (ya no está en el centro) */
+    .selector:has(.panel:hover) .divider-line {
+      opacity: 0;
+    }
+ 
+    /* ── Puntero tactil (mobile hint) ───────── */
+    .panel-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      opacity: .5;
+      transition: opacity .3s;
+    }
+ 
+    .panel:hover .panel-hint { opacity: 0; }
+    .panel--colegio .panel-hint { color: var(--blue); }
+    .panel--universidad .panel-hint { color: rgba(255,255,255,.8); }
+ 
+    /* ── Mobile layout ───────────────────────── */
+    @media (max-width: 768px) {
+      html, body { overflow: auto; }
+ 
+      .selector {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+      }
+ 
+      .panel {
+        flex: none !important;
+        min-height: 50vh;
+        padding: 100px 2rem 4rem;
+        transition: none;
+      }
+ 
+      .selector:has(.panel--colegio:hover) .panel--colegio,
+      .selector:has(.panel--colegio:hover) .panel--universidad,
+      .selector:has(.panel--universidad:hover) .panel--universidad,
+      .selector:has(.panel--universidad:hover) .panel--colegio {
+        flex: none !important;
+      }
+ 
+      .divider-line { display: none; }
+ 
+      .divider {
+        position: static;
+        transform: none;
+        padding: 1rem 0;
+        pointer-events: none;
+      }
+ 
+      .divider-shield { width: 60px; height: 60px; }
+ 
+      .panel-sub {
+        opacity: 1;
+        transform: none;
+      }
+ 
+      .panel-hint { display: none; }
+    }
+ 
+    /* ── Reduced motion ──────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .panel,
+      .panel-icon,
+      .panel-title,
+      .panel-sub,
+      .panel-cta,
+      .panel-cta svg,
+      .divider-shield { transition: none; }
+    }
+  </style>
+</head>
+<body>
+ 
+<!-- Header flotante -->
+<header class="site-header" role="banner">
+  <a href="/" class="header-logo" aria-label="Instituto Everest de Sinaloa — Inicio">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" width="32" height="32" aria-hidden="true">
+      <path d="M100 10 L175 35 L175 100 C175 145 145 175 100 190 C55 175 25 145 25 100 L25 35 Z" fill="white" fill-opacity=".15" stroke="white" stroke-width="2"/>
+      <text x="100" y="92" text-anchor="middle" font-family="serif" font-size="48" font-weight="bold" fill="white">E</text>
+      <text x="100" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="2">EVEREST</text>
+    </svg>
+    <span class="header-logo-text">Instituto Everest<br>de Sinaloa</span>
+  </a>
+</header>
+ 
+<!-- ── Selector principal ── -->
+<main class="selector" role="main" aria-label="Elige tu nivel educativo">
+ 
+  <!-- Línea divisora vertical (dentro del selector para que :has() funcione) -->
+  <div class="divider-line" aria-hidden="true"></div>
+ 
+  <!-- Escudo central (dentro del selector para que :has() funcione) -->
+  <div class="divider" aria-hidden="true">
+    <svg class="divider-shield" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+      <defs>
+        <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#112f55"/>
+          <stop offset="100%" stop-color="#0A2240"/>
+        </linearGradient>
+        <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFD449"/>
+          <stop offset="100%" stop-color="#F5B800"/>
+        </linearGradient>
+      </defs>
+      <path d="M100 10 L175 35 L175 100 C175 145 145 175 100 190 C55 175 25 145 25 100 L25 35 Z" fill="url(#sg)" stroke="#F5B800" stroke-width="3"/>
+      <path d="M100 25 L160 45 L160 100 C160 135 135 160 100 172 C65 160 40 135 40 100 L40 45 Z" fill="none" stroke="url(#gg)" stroke-width="1.5" opacity="0.5"/>
+      <text x="100" y="92" text-anchor="middle" font-family="serif" font-size="48" font-weight="bold" fill="url(#gg)">E</text>
+      <text x="100" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" letter-spacing="2">EVEREST</text>
+      <text x="100" y="142" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="500" fill="#FFD449" letter-spacing="1.5">DE SINALOA</text>
+      <path d="M70 155 L75 165 L80 155 M90 155 L95 165 L100 155 M110 155 L115 165 L120 155" stroke="#F5B800" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </svg>
+  </div>
+ 
+  <!-- Panel Colegio -->
+  <a class="panel panel--colegio"
+     href="https://colegio.educacioneverest.com"
+     aria-label="Ir a Colegio Everest — Preescolar y Primaria">
+ 
+    <div class="panel-content">
+ 
+      <div class="panel-icon" aria-hidden="true">
+        <!-- Icono escuela/niños -->
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#112f55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="20" width="32" height="22" rx="2"/>
+          <path d="M4 22 L24 8 L44 22"/>
+          <rect x="18" y="30" width="12" height="12" rx="1"/>
+          <circle cx="24" cy="16" r="3"/>
+        </svg>
+      </div>
+ 
+      <span class="panel-badge">Educación Básica</span>
+ 
+      <h1 class="panel-title">Colegio<br>Everest</h1>
+ 
+      <div class="panel-levels" aria-label="Niveles disponibles">
+        <span class="panel-level">Preescolar</span>
+        <span class="panel-level">Primaria</span>
+      </div>
+ 
+      <p class="panel-sub">Formación integral para niños de 3 a 12 años, en un ambiente cálido y estimulante. Dos sucursales en Mazatlán.</p>
+ 
+      <span class="panel-cta" aria-hidden="true">
+        Entrar al Colegio
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+      </span>
+    </div>
+ 
+    <div class="panel-hint" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 8h14M8 1l7 7-7 7"/></svg>
+      Preescolar · Primaria
+    </div>
+  </a>
+ 
+  <!-- Panel Universidad -->
+  <a class="panel panel--universidad"
+     href="https://educacioneverest.com/universidad"
+     aria-label="Ir a Universidad Everest — Educación Superior en Línea">
+ 
+    <div class="panel-content">
+ 
+      <div class="panel-icon" aria-hidden="true">
+        <!-- Icono birrete/universidad -->
+        <svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="#F5B800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 18 L24 10 L44 18 L24 26 Z"/>
+          <path d="M14 22v10c0 4 4.5 8 10 8s10-4 10-8V22"/>
+          <path d="M44 18 v10"/>
+          <circle cx="44" cy="30" r="2" fill="#F5B800" stroke="none"/>
+        </svg>
+      </div>
+ 
+      <span class="panel-badge">Educación Superior</span>
+ 
+      <h2 class="panel-title" style="color: white;">Universidad<br>Everest</h2>
+ 
+      <div class="panel-levels" aria-label="Oferta educativa">
+        <span class="panel-level">Licenciaturas</span>
+        <span class="panel-level">Maestrías</span>
+        <span class="panel-level">Doctorados</span>
+      </div>
+ 
+      <p class="panel-sub">Educación superior 100% en línea, con validez oficial. Estudia a tu ritmo desde cualquier lugar.</p>
+ 
+      <span class="panel-cta" aria-hidden="true">
+        Entrar a la Universidad
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+      </span>
+    </div>
+ 
+    <div class="panel-hint" aria-hidden="true">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8H1M8 15l-7-7 7-7"/></svg>
+      Licenciaturas · Maestrías
+    </div>
+  </a>
+ 
+</main>
+ 
+<script>
+  // Soporte para touch (tablets/mobile)
+  document.querySelectorAll('.panel').forEach(panel => {
+    panel.addEventListener('touchstart', () => {}, { passive: true });
+  });
+ 
+  // Prefetch al hacer hover en cada panel
+  const prefetched = new Set();
+  document.querySelectorAll('.panel[href]').forEach(panel => {
+    panel.addEventListener('mouseenter', () => {
+      const href = panel.getAttribute('href');
+      if (href && !prefetched.has(href)) {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = href;
+        document.head.appendChild(link);
+        prefetched.add(href);
+      }
+    });
+  });
+</script>
+</body>
+</html>

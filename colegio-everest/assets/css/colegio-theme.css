@@ -316,6 +316,27 @@ body { background-color: var(--col-warm-bg); }
 
 .gallery-item svg { opacity: .4; }
 
+button.gallery-item {
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+}
+
+.gallery-grid--flow {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: none;
+}
+
+.gallery-grid--flow .gallery-item { height: 180px; }
+
+@media (max-width: 768px) {
+  .gallery-grid--flow { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid--flow { grid-template-columns: 1fr; }
+}
+
 /* ── FAQ ─────────────────────────────────────── */
 
 .faq-list {

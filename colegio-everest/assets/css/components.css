@@ -1552,6 +1552,16 @@
   height: 100%;
 }
 
+.scholarship-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--everest-gold);
+}
+
+.scholarship-card--featured:hover {
+  box-shadow: 0 20px 35px -5px rgba(245, 184, 0, 0.3);
+}
+
 .scholarship-card--featured {
   border-color: var(--everest-gold);
   background: linear-gradient(180deg, var(--everest-gold-50) 0%, var(--everest-white) 60%);
@@ -1600,6 +1610,11 @@
   margin-bottom: var(--space-3);
 }
 
+.scholarship-card__percent--sm {
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+}
+
 .scholarship-card__desc {
   font-size: var(--fs-sm);
   color: var(--everest-gray-600);
@@ -1611,6 +1626,13 @@
 .scholarship-card .btn {
   align-self: flex-start;
   margin-top: auto;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, var(--everest-blue-darker), var(--everest-blue));
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
 }
 
 /* ============================================
@@ -1631,6 +1653,14 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--everest-gray-200);
   transition: all var(--transition-base);
+}
+
+button.event-card {
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
 }
 
 .event-card:hover {
@@ -2182,6 +2212,52 @@
 }
 
 .modal.is-open .modal__dialog { transform: scale(1); }
+
+.modal__dialog--lightbox {
+  max-width: 720px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  background: var(--everest-gray-900);
+  color: var(--everest-white);
+}
+
+.modal__dialog--lightbox [data-lightbox-icon] { opacity: .5; }
+.modal__dialog--lightbox .modal__close { background: rgba(255,255,255,0.15); color: var(--everest-white); }
+
+.lightbox-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: .5rem;
+}
+
+.modal__dialog--lightbox .carousel-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: var(--everest-white);
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.modal__dialog--lightbox .carousel-btn:hover,
+.modal__dialog--lightbox .carousel-btn:active {
+  background: rgba(255,255,255,0.3);
+  color: var(--everest-white);
+  transform: scale(1.08);
+}
+
+@media (max-width: 480px) {
+  .modal__dialog--lightbox { padding: var(--space-6) var(--space-4); min-height: 340px; }
+  .modal__dialog--lightbox .carousel-btn { width: 52px; height: 52px; }
+}
+
 
 .modal__close {
   position: absolute;

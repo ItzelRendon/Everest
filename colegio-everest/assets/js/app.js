@@ -8,81 +8,106 @@
   // ============================================
   // DATA
   // ============================================
-  const PROGRAMS = [
-    // Licenciaturas
-    { id: 'ldds', name: 'Diseño y Desarrollo de Software', level: 'licenciatura', area: 'tecnologia', icon: 'software', format: 'Cuatrimestral', duration: '3 años 8 meses', start: 'Febrero y Septiembre' },
-    { id: 'lfa', name: 'Finanzas y Administración', level: 'licenciatura', area: 'negocios', icon: 'finance', format: 'Cuatrimestral', duration: '3 años 8 meses', start: 'Febrero y Septiembre' },
-    { id: 'lmd', name: 'Marketing Digital', level: 'licenciatura', area: 'negocios', icon: 'marketing', format: 'Cuatrimestral', duration: '3 años 8 meses', start: 'Febrero y Septiembre' },
-    { id: 'lped', name: 'Pedagogía', level: 'licenciatura', area: 'educacion', icon: 'pedagogy', format: 'Cuatrimestral', duration: '3 años 8 meses', start: 'Febrero y Septiembre' },
-    { id: 'lsa', name: 'Sustentabilidad y Ambiente', level: 'licenciatura', area: 'ingenieria', icon: 'environment', format: 'Cuatrimestral', duration: '3 años 8 meses', start: 'Febrero y Septiembre' },
-
-    // Maestrías
-    { id: 'maegp', name: 'Administración de Empresas y Gestión de Proyectos', level: 'maestria', area: 'negocios', icon: 'business', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mcd', name: 'Ciencia de Datos', level: 'maestria', area: 'tecnologia', icon: 'data', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'maed', name: 'Educación', level: 'maestria', area: 'educacion', icon: 'pedagogy', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mga', name: 'Gestión Ambiental', level: 'maestria', area: 'ingenieria', icon: 'environment', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mgde', name: 'Gestión y Dirección Escolar', level: 'maestria', area: 'educacion', icon: 'pedagogy', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mia', name: 'Ingeniería Aplicada', level: 'maestria', area: 'ingenieria', icon: 'engineering', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mingc', name: 'Inteligencia de Negocios y Gestión del Conocimiento', level: 'maestria', area: 'tecnologia', icon: 'data', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mjo', name: 'Juicios Orales en Materia Penal y Mercantil', level: 'maestria', area: 'educacion', area2: 'negocios', icon: 'law', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mli', name: 'Logística e Industria', level: 'maestria', area: 'ingenieria', icon: 'logistics', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'mpe', name: 'Pedagogías Emergentes', level: 'maestria', area: 'educacion', icon: 'pedagogy', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-    { id: 'msi', name: 'Seguridad Informática', level: 'maestria', area: 'tecnologia', icon: 'security', format: 'Cuatrimestral', duration: '1 año 4 meses', start: 'Febrero y Septiembre' },
-
-    // Doctorados
-    { id: 'daa', name: 'Ambientes de Aprendizaje', level: 'doctorado', area: 'educacion', icon: 'doctorate', format: 'Semestral', duration: '2 años 6 meses', start: 'Febrero y Septiembre' },
-    { id: 'ddi', name: 'Docencia e Investigación', level: 'doctorado', area: 'educacion', icon: 'research', format: 'Semestral', duration: '2 años', start: 'Febrero y Septiembre' },
-    { id: 'doed', name: 'Educación', level: 'doctorado', area: 'educacion', icon: 'pedagogy', format: 'Semestral', duration: '2 años 6 meses', start: 'Febrero y Septiembre' },
-    { id: 'dea', name: 'Energía y Ambiente', level: 'doctorado', area: 'ingenieria', icon: 'environment', format: 'Semestral', duration: '2 años 6 meses', start: 'Febrero y Septiembre' }
-  ];
-
-  const REQUIREMENTS = {
-    licenciatura: [
-      'Certificado de bachillerato',
-      'Acta de nacimiento',
-      'INE y CURP',
-      'Carta de autenticidad (expedida por la preparatoria de egreso)',
-      'Comprobante de pago de inscripción'
-    ],
-    maestria: [
-      'Título de licenciatura',
-      'Acta de nacimiento',
-      'INE y CURP',
-      'Comprobante de pago de inscripción'
-    ],
-    doctorado: [
-      'Título de maestría o Acta de defensa de tesis',
-      'Acta de nacimiento',
-      'INE y CURP',
-      'Comprobante de pago de inscripción'
-    ]
-  };
-
   const TESTIMONIALS = [
     {
-      text: 'Estudiar en el Instituto Everest me permitió compaginar mi trabajo con una maestría de calidad. La plataforma es muy intuitiva y los docentes siempre están dispuestos a apoyarte.',
-      name: 'María González',
-      program: 'Maestría en Educación',
-      initials: 'MG'
+      text: '[Escribe aquí el testimonio del padre, madre o alumno...]',
+      name: '[Nombre del padre/madre]',
+      program: '[Preescolar — Sucursal Santa Rosa]',
+      initials: 'XX'
     },
     {
-      text: 'La flexibilidad horaria y la calidad académica fueron clave para mí. Pude cursar mi doctorado desde Sinaloa con reconocimiento internacional.',
-      name: 'Dr. Carlos Ramírez',
-      program: 'Doctorado en Docencia e Investigación',
-      initials: 'CR'
+      text: '[Escribe aquí el testimonio del padre, madre o alumno...]',
+      name: '[Nombre del padre/madre]',
+      program: '[Primaria — Sucursal Munich]',
+      initials: 'XX'
     },
     {
-      text: 'Como madre y profesionista, el modelo en línea del Instituto Everest se adaptó perfectamente a mi vida. Los tutores son excelentes y el contenido es muy actual.',
-      name: 'Laura Hernández',
-      program: 'Licenciatura en Pedagogía',
-      initials: 'LH'
+      text: '[Escribe aquí el testimonio del padre, madre o alumno...]',
+      name: '[Nombre del alumno/a]',
+      program: '[Primaria — Sucursal Santa Rosa]',
+      initials: 'XX'
     },
     {
-      text: 'Mi maestría en Ciencia de Datos me abrió puertas en el sector tecnológico. Los proyectos prácticos y el claustro docente marcaron la diferencia.',
-      name: 'Roberto Sánchez',
-      program: 'Maestría en Ciencia de Datos',
-      initials: 'RS'
+      text: '[Escribe aquí el testimonio del padre, madre o alumno...]',
+      name: '[Nombre del padre/madre]',
+      program: '[Preescolar — Sucursal Munich]',
+      initials: 'XX'
     }
+  ];
+
+  const NEWS = [
+    {
+      id: 0,
+      category: '[Categoría]',
+      date: '2026-01-01',
+      dateLabel: '[DD Mes AAAA]',
+      readTime: '[X]',
+      title: '[Título de la noticia]',
+      excerpt: '[Breve resumen de la noticia en 1-2 líneas.]',
+      body: '[Cuerpo completo de la noticia. Reemplaza este texto con el contenido real: qué pasó, cuándo, dónde y por qué es relevante para la comunidad del colegio.]'
+    },
+    {
+      id: 1,
+      category: '[Categoría]',
+      date: '2026-01-01',
+      dateLabel: '[DD Mes AAAA]',
+      readTime: '[X]',
+      title: '[Título de la noticia]',
+      excerpt: '[Breve resumen de la noticia en 1-2 líneas.]',
+      body: '[Cuerpo completo de la noticia. Reemplaza este texto con el contenido real: qué pasó, cuándo, dónde y por qué es relevante para la comunidad del colegio.]'
+    },
+    {
+      id: 2,
+      category: '[Categoría]',
+      date: '2026-01-01',
+      dateLabel: '[DD Mes AAAA]',
+      readTime: '[X]',
+      title: '[Título de la noticia]',
+      excerpt: '[Breve resumen de la noticia en 1-2 líneas.]',
+      body: '[Cuerpo completo de la noticia. Reemplaza este texto con el contenido real: qué pasó, cuándo, dónde y por qué es relevante para la comunidad del colegio.]'
+    }
+  ];
+
+  const EVENTS = [
+    {
+      day: '00',
+      month: '[Mes]',
+      title: '[Nombre del evento]',
+      detail: '[Detalle del evento]',
+      time: '[Hora]',
+      location: '[Lugar / Sucursal]',
+      description: '[Descripción completa del evento: en qué consiste, a quién va dirigido y si requiere confirmar asistencia.]'
+    },
+    {
+      day: '00',
+      month: '[Mes]',
+      title: '[Nombre del evento]',
+      detail: '[Detalle del evento]',
+      time: '[Hora]',
+      location: '[Lugar / Sucursal]',
+      description: '[Descripción completa del evento: en qué consiste, a quién va dirigido y si requiere confirmar asistencia.]'
+    },
+    {
+      day: '00',
+      month: '[Mes]',
+      title: '[Nombre del evento]',
+      detail: '[Detalle del evento]',
+      time: '[Hora]',
+      location: '[Lugar / Sucursal]',
+      description: '[Descripción completa del evento: en qué consiste, a quién va dirigido y si requiere confirmar asistencia.]'
+    }
+  ];
+
+  const GALLERY = [
+    { id: 0, type: 'photo', category: 'instalaciones', label: '[Foto: fachada del colegio]' },
+    { id: 1, type: 'photo', category: 'instalaciones', label: '[Foto: salón de clases]' },
+    { id: 2, type: 'photo', category: 'alumnos', label: '[Foto: alumnos en actividad]' },
+    { id: 3, type: 'video', category: 'videos', label: '[Video: recorrido por el colegio]' },
+    { id: 4, type: 'photo', category: 'eventos', label: '[Foto: festival o ceremonia]' },
+    { id: 5, type: 'photo', category: 'alumnos', label: '[Foto: alumnos en el recreo]' },
+    { id: 6, type: 'photo', category: 'eventos', label: '[Foto: día del niño / evento especial]' },
+    { id: 7, type: 'video', category: 'videos', label: '[Video: testimonio en video]' },
+    { id: 8, type: 'photo', category: 'instalaciones', label: '[Foto: área deportiva]' }
   ];
 
   // ============================================
@@ -93,9 +118,12 @@
     initHeroCarousel();
     initSearch();
     initTabs();
-    initPrograms();
     initCounters();
     initTestimonials();
+    initNews();
+    initEventModal();
+    initArticlePage();
+    initGallery();
     initWizard();
     initModals();
     initRevealAnimations();
@@ -209,22 +237,14 @@
     if (!toggle || !modal) return;
 
     const searchableItems = [
-      ...PROGRAMS.map(p => ({
-        title: p.name,
-        category: p.level.charAt(0).toUpperCase() + p.level.slice(1),
-        url: `oferta/${p.id}.html`,
-        icon: 'book'
-      })),
-      { title: 'Proceso de Admisión', category: 'Admisiones', url: 'admisiones/proceso.html', icon: 'file-text' },
-      { title: 'Requisitos de Admisión', category: 'Admisiones', url: 'admisiones/requisitos.html', icon: 'shield-check' },
-      { title: 'Becas y Financiamiento', category: 'Admisiones', url: 'admisiones/becas.html', icon: 'scholarship' },
-      { title: 'Calendario Académico', category: 'Academico', url: 'admisiones/calendario.html', icon: 'calendar' },
-      { title: 'Testimonios', category: 'Vida Estudiantil', url: 'vida-estudiantil/testimonios.html', icon: 'quote' },
-      { title: 'Egresados Destacados', category: 'Vida Estudiantil', url: 'vida-estudiantil/egresados.html', icon: 'alumni' },
-      { title: 'Bolsa de Trabajo', category: 'Trabajo', url: 'bolsa-trabajo.html', icon: 'briefcase' },
-      { title: 'Misión y Visión', category: 'Instituto', url: 'instituto/nosotros.html', icon: 'globe' },
-      { title: 'Historia', category: 'Instituto', url: 'instituto/historia.html', icon: 'building' },
-      { title: 'Claustro Docente', category: 'Instituto', url: 'instituto/claustro.html', icon: 'users' }
+      { title: 'Nosotros', category: 'Colegio', url: 'nosotros.html', icon: 'globe' },
+      { title: 'Preescolar', category: 'Niveles', url: 'preescolar.html', icon: 'book' },
+      { title: 'Primaria', category: 'Niveles', url: 'primaria.html', icon: 'book' },
+      { title: 'Admisiones', category: 'Admisiones', url: 'admisiones.html', icon: 'file-text' },
+      { title: 'Costos y Becas', category: 'Admisiones', url: 'becas.html', icon: 'scholarship' },
+      { title: 'Noticias', category: 'Comunidad', url: 'noticias.html', icon: 'calendar' },
+      { title: 'Galería', category: 'Comunidad', url: 'galeria.html', icon: 'quote' },
+      { title: 'Contacto', category: 'Contacto', url: 'contacto.html', icon: 'building' }
     ];
 
     function renderResults(query = '') {
@@ -310,97 +330,6 @@
         document.querySelector(`[data-tab-panel="${target}"]`)?.classList.add('is-active');
       });
     });
-  }
-
-  // ============================================
-  // PROGRAMS GRID
-  // ============================================
-  function initPrograms() {
-    const grid = document.querySelector('.programs-grid');
-    const filterButtons = document.querySelectorAll('[data-filter]');
-    const searchInput = document.querySelector('[data-programs-search]');
-
-    if (!grid) return;
-
-    function renderPrograms(filter = 'all', query = '') {
-      let filtered = PROGRAMS;
-
-      if (filter !== 'all') {
-        filtered = filtered.filter(p => p.level === filter);
-      }
-
-      if (query) {
-        filtered = filtered.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
-      }
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--everest-gray-500);">
-            <p>No se encontraron programas con esos criterios.</p>
-          </div>
-        `;
-        return;
-      }
-
-      grid.innerHTML = filtered.map(p => `
-        <article class="program-card reveal" data-level="${p.level}">
-          <div class="program-card__image">
-            <span class="program-card__level">${p.level === 'licenciatura' ? 'Licenciatura' : p.level === 'maestria' ? 'Maestría' : 'Doctorado'}</span>
-            <div class="program-card__pattern"></div>
-            <img src="assets/svg/program-${p.icon}.svg" alt="" class="program-card__icon" loading="lazy" width="64" height="64">
-          </div>
-          <div class="program-card__body">
-            <h3 class="program-card__title">${p.name}</h3>
-            <div class="program-card__features">
-              <div class="program-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-                <span><strong>Formato:</strong> ${p.format}</span>
-              </div>
-              <div class="program-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span><strong>Duración:</strong> ${p.duration}</span>
-              </div>
-              <div class="program-card__feature">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                <span><strong>Inicio:</strong> ${p.start}</span>
-              </div>
-            </div>
-          </div>
-          <div class="program-card__footer">
-            <a href="oferta/${p.id}.html" class="program-card__cta">
-              Ver detalles
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <button class="program-card__requirements" data-requirements="${p.level}">Requisitos</button>
-          </div>
-        </article>
-      `).join('');
-
-      // Re-bind requirements buttons
-      grid.querySelectorAll('[data-requirements]').forEach(btn => {
-        btn.addEventListener('click', () => openRequirementsModal(btn.dataset.requirements));
-      });
-    }
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        const filter = btn.dataset.filter;
-        renderPrograms(filter, searchInput?.value || '');
-      });
-    });
-
-    let searchDebounce;
-    searchInput?.addEventListener('input', (e) => {
-      clearTimeout(searchDebounce);
-      searchDebounce = setTimeout(() => {
-        const activeFilter = document.querySelector('[data-filter].is-active')?.dataset.filter || 'all';
-        renderPrograms(activeFilter, e.target.value);
-      }, 200);
-    });
-
-    renderPrograms();
   }
 
   // ============================================
@@ -517,6 +446,173 @@
         goToTestimonial((currentIndex + 1) % TESTIMONIALS.length);
       }, 6000);
     });
+  }
+
+  // ============================================
+  // NEWS GRID (fuente única: array NEWS)
+  // ============================================
+  function initNews() {
+    const grid = document.querySelector('.news-grid');
+    if (!grid || !NEWS.length) return;
+
+    grid.innerHTML = NEWS.map(n => `
+      <article class="news-card">
+        <div class="news-card__image">
+          <span class="news-card__category">${n.category}</span>
+        </div>
+        <div class="news-card__body">
+          <div class="news-card__meta">
+            <time datetime="${n.date}">${n.dateLabel}</time>
+            <span>· ${n.readTime} min lectura</span>
+          </div>
+          <h3 class="news-card__title">${n.title}</h3>
+          <p class="news-card__excerpt">${n.excerpt}</p>
+          <a href="noticia.html?id=${n.id}" class="card__link">Leer más <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // ============================================
+  // EVENT MODAL (fuente única: array EVENTS)
+  // ============================================
+  function initEventModal() {
+    const cards = document.querySelectorAll('[data-event-index]');
+    const modal = document.getElementById('modal-event');
+    if (!cards.length || !modal) return;
+
+    const titleEl = modal.querySelector('.modal__title');
+    const subtitleEl = modal.querySelector('.modal__subtitle');
+    const bodyEl = modal.querySelector('[data-event-body]');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const ev = EVENTS[card.dataset.eventIndex];
+        if (!ev) return;
+        if (titleEl) titleEl.textContent = ev.title;
+        if (subtitleEl) subtitleEl.textContent = `${ev.day} de ${ev.month} · ${ev.time} · ${ev.location}`;
+        if (bodyEl) bodyEl.textContent = ev.description;
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  }
+
+  // ============================================
+  // ARTICLE PAGE (noticia.html) — lee ?id= de la URL
+  // ============================================
+  function initArticlePage() {
+    const titleEl = document.querySelector('[data-article-title]');
+    if (!titleEl) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id'), 10);
+    const article = NEWS.find(n => n.id === id) || NEWS[0];
+    if (!article) return;
+
+    document.title = `${article.title} | Colegio Everest`;
+    titleEl.textContent = article.title;
+
+    const categoryEl = document.querySelector('[data-article-category]');
+    const dateEl = document.querySelector('[data-article-date]');
+    const readtimeEl = document.querySelector('[data-article-readtime]');
+    const bodyEl = document.querySelector('[data-article-body]');
+    const crumbEl = document.querySelector('[data-article-crumb]');
+
+    if (categoryEl) categoryEl.textContent = article.category;
+    if (dateEl) { dateEl.textContent = article.dateLabel; dateEl.setAttribute('datetime', article.date); }
+    if (readtimeEl) readtimeEl.textContent = `${article.readTime} min lectura`;
+    if (bodyEl) bodyEl.textContent = article.body;
+    if (crumbEl) crumbEl.textContent = article.title;
+  }
+
+  // ============================================
+  // GALERÍA (filtro + lightbox)
+  // ============================================
+  function initGallery() {
+    const grid = document.querySelector('[data-gallery-grid]');
+    if (!grid) return;
+
+    const chips = document.querySelectorAll('[data-gallery-filter]');
+    const lightbox = document.getElementById('modal-lightbox');
+    const lightboxDialog = lightbox?.querySelector('.modal__dialog');
+    const lightboxIcon = lightbox?.querySelector('[data-lightbox-icon]');
+    const lightboxLabel = lightbox?.querySelector('[data-lightbox-label]');
+    const lightboxNote = lightbox?.querySelector('[data-lightbox-note]');
+    const lightboxCounter = lightbox?.querySelector('[data-lightbox-counter]');
+    const prevBtn = lightbox?.querySelector('[data-lightbox-prev]');
+    const nextBtn = lightbox?.querySelector('[data-lightbox-next]');
+
+    const photoIcon = '<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    const videoIcon = '<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>';
+
+    let currentItems = GALLERY;
+    let currentIndex = 0;
+
+    function showLightboxItem(index) {
+      if (!currentItems.length || !lightbox) return;
+      currentIndex = (index + currentItems.length) % currentItems.length;
+      const item = currentItems[currentIndex];
+
+      if (lightboxIcon) lightboxIcon.innerHTML = item.type === 'video' ? videoIcon : photoIcon;
+      if (lightboxLabel) lightboxLabel.textContent = item.label;
+      if (lightboxNote) lightboxNote.textContent = item.type === 'video'
+        ? 'Reemplaza este bloque con el reproductor de video real (YouTube, Vimeo o archivo propio).'
+        : 'Reemplaza este bloque con la fotografía real en alta calidad.';
+      if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} / ${currentItems.length}`;
+    }
+
+    function openLightbox(index) {
+      showLightboxItem(index);
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function render(filter) {
+      currentItems = filter === 'todas' ? GALLERY : GALLERY.filter(g => g.category === filter);
+
+      grid.innerHTML = currentItems.map(g => `
+        <button type="button" class="gallery-item" data-gallery-id="${g.id}" style="cursor:pointer;border:1.5px dashed var(--col-warm-border, var(--everest-gray-300));width:100%;">
+          ${g.type === 'video' ? videoIcon : photoIcon}
+          <span>${g.label}</span>
+        </button>
+      `).join('');
+
+      grid.querySelectorAll('[data-gallery-id]').forEach((btn, i) => {
+        btn.addEventListener('click', () => openLightbox(i));
+      });
+    }
+
+    prevBtn?.addEventListener('click', () => showLightboxItem(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => showLightboxItem(currentIndex + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox?.classList.contains('is-open')) return;
+      if (e.key === 'ArrowLeft') showLightboxItem(currentIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxItem(currentIndex + 1);
+    });
+
+    // Swipe táctil (móvil)
+    let touchStartX = 0;
+    lightboxDialog?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    lightboxDialog?.addEventListener('touchend', (e) => {
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(deltaX) < 40) return;
+      if (deltaX < 0) showLightboxItem(currentIndex + 1);
+      else showLightboxItem(currentIndex - 1);
+    }, { passive: true });
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        render(chip.dataset.galleryFilter);
+      });
+    });
+
+    render('todas');
   }
 
   // ============================================
@@ -645,31 +741,6 @@
     });
   }
 
-  function openRequirementsModal(level) {
-    const modal = document.getElementById('modal-requirements');
-    if (!modal) return;
-
-    const list = modal.querySelector('.modal__list');
-    const subtitle = modal.querySelector('.modal__subtitle');
-    const items = REQUIREMENTS[level] || [];
-
-    if (subtitle) {
-      subtitle.textContent = level === 'licenciatura' ? 'Licenciatura' : level === 'maestria' ? 'Maestría' : 'Doctorado';
-    }
-
-    if (list) {
-      list.innerHTML = items.map(req => `
-        <div class="modal__list-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>${req}</span>
-        </div>
-      `).join('');
-    }
-
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
-
   // ============================================
   // REVEAL ANIMATIONS
   // ============================================
@@ -780,5 +851,5 @@
   }
 
   // Expose to global for inline use
-  window.Everest = { showToast, openRequirementsModal };
+  window.Everest = { showToast };
 })();
